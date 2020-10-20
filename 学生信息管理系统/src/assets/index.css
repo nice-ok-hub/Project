@@ -1,0 +1,220 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body, .wrapper {
+    height: 100%;
+}
+.wrapper {
+    position: relative;
+}
+.header {
+    width: 100%;
+    height: 70px;
+    background-color: #354457;
+}
+
+.left-menu {
+    width: 200px;
+    height: calc(100% - 70px);
+    background-color: #4d5e70;
+    color: #b3bcc5;
+    display: inline-block;
+    position: relative;
+    /* z-index: 1; */
+}
+.left-menu dl dt {
+    font-weight: bold;
+    padding-left: 8px;
+}
+.left-menu dl dt, .left-menu dl dd {
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+}
+.left-menu dl dd {
+    padding-left: 30px;
+    cursor: pointer;
+}
+.left-menu dl dd:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #354457;
+}
+.left-menu dl dd.active {
+    background-color: #ddd;
+    color: #354457;
+}
+
+.right-content {
+    position: absolute;
+    min-width: 500px;
+    width: calc(100% - 200px);
+    height: calc(100% - 70px);
+    margin-left: 200px;
+    top: 70px;
+    background-color: #eee;
+}
+.right-content .content {
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+}
+.right-content .content.content-active {
+    display: block;
+}
+.content.add-student {
+    margin: 50px auto;
+    width: 400px;
+    height: calc(100% - 100px);
+    /* box-sizing: border-box; */
+    /* border: 1px solid #000; */
+}
+.content.student-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.content form label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    margin-right: 10px;
+}
+.content form label.radio-label {
+    width: 20px;
+}
+.content form div {
+    margin: 10px 0;
+}
+.content form label, .content form input {
+    font-size: 16px;
+}
+.content form .btn {
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 10px;
+}
+.content table {
+    width: 100%;
+    text-align: center;
+}
+.content table thead {
+    background-color: #e3e8ee;
+    color: #646987;
+    font-size: 14px;
+}
+.content table tbody {
+    background-color: #fff;
+    font-size: 14px;
+}
+tr {
+    height: 30px;
+    line-height: 30px;
+}
+table tr td .btn {
+    padding: 3px 10px;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+table tr td .btn.edit {
+    background-color: #5cb85c;
+}
+table tr td .btn.edit:hover {
+    color: #fff;
+    background-color: #398439;
+    border-color: #255625
+}
+table tr td .btn.del {
+    background-color: #d9534f;
+}
+
+table tr td .btn.del:hover {
+    color: #fff;
+    background-color: #c9302c
+}
+.button {
+    font-size: 0;
+}
+.dialog {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    /* display: none; */
+}
+.dialog.show {
+    display: block;
+}
+.dialog .mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.dialog .dialog-content {
+    width: 500px;
+    height: 450px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -250px;
+    margin-top: -225px;
+    padding: 10px;
+}
+.dialog .dialog-content form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.search {
+    height: 60px;
+    line-height: 60px;
+    padding: 0 10px;
+}
+.search label {
+    font-size: 16px;
+    color: #646987;
+    font-weight: 800;
+}
+.search #search-word{
+    font-size: 16px;
+    width: 200px;
+    height: 30px;
+    border: none;
+}
+.search #search-submit {
+    height: 28px;
+    line-height: 28px;
+    padding: 0 10px;
+    outline: none;
+    display: inline-block;
+    border: none;
+    background-color: #354457;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+.page-size, .my-turn-page  {
+    display: inline-block;
+}
+.my-turn-page li{
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.my-turn-page  li.active {
+    background-color:  #428bca;
+    color: aliceblue;
+}
+#turn-page {
+    margin-top: 20px;
+}

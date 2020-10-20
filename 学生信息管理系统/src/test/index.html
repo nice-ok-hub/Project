@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .toast {
+            position: fixed;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px;
+            background: #f0f9eb;
+            color: #6bfa1f;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.3s;
+        }
+
+        .fade-out {
+            animation: fadeOut 0.3s;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                top: 0;
+                opacity: 0;
+            }
+
+            100% {
+                top: 40px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                top: 40px;
+                opacity: 1;
+            }
+
+            100% {
+
+                top: 0;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点击，弹窗</button>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        const btn = document.getElementById("btn");
+        btn.onclick = function () {
+            const app = new Vue({
+                el: document.createElement("div"),
+                template: `<div class="toast" :class="{'fade-in':show,'fade-out':!show}" v-if="flag">√修改成功</div>`,
+                data: {
+                    flag: true,
+                    show: true
+                }
+            })
+            document.body.appendChild(app.$el)
+            setTimeout(() => {
+                app.flag = false
+            }, 3000)
+            setTimeout(() => {
+                app.show = false
+            }, 2900)
+        }
+    </script>
+</body>
+
+</html>
